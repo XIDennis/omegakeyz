@@ -3,6 +3,9 @@
 <head>
 	<title>First Class</title>
 	<style>
+		html {
+			scroll-behavior: smooth;
+		}
 		body {
 			margin: 0;
 			padding: 0;
@@ -17,7 +20,13 @@
 		body::-webkit-scrollbar {
   			display: none;
 		}
-	
+		.wrap {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
 		header {
 			position: fixed;
 			top: 0;
@@ -36,6 +45,7 @@
 			from { opacity: 0; }
 			to { opacity: 1; }
 		}
+		
 	
 		header h1 {
 			margin: 0;
@@ -60,6 +70,28 @@
 
 		}
 		
+		.scroll-to-top {
+			position: fixed;
+			bottom: 20px; /* Adjust this value to set the distance from the bottom of the page */
+			right: 20px; /* Adjust this value to set the distance from the right side of the page */
+			min-width: 150px;
+			min-height: 30px;
+			font-family: 'Nunito', sans-serif;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 1.3px;
+			font-weight: 700;
+			color: #313133;
+			background: #d17f4f;
+			background: linear-gradient(90deg, rgb(230, 174, 129) 0%, rgb(197, 89, 56) 100%);
+			border: none;
+			border-radius: 1000px;
+			box-shadow: 12px 12px 24px rgba(189, 75, 47, 0.64);
+			transition: all 0.3s ease-in-out 0s;
+			cursor: pointer;
+			outline: none;
+			padding: 10px;
+		}
 
 		main h1 {
 			font-size: 32px;
@@ -100,19 +132,60 @@
 			font-style: italic;
 		}
 
-		button {
-			padding: 10px 20px;
-			border-radius: 5px;
-			background-color: #0c8512;
-			color: white;
-			font-size: 18px;
+		.button {
+			min-width: 300px;
+			min-height: 60px;
+			font-family: 'Nunito', sans-serif;
+			font-size: 22px;
+			text-transform: uppercase;
+			letter-spacing: 1.3px;
+			font-weight: 700;
+			color: #313133;
+			background: #d17f4f;
+			background: linear-gradient(90deg, rgb(230, 174, 129) 0%, rgb(197, 89, 56) 100%);
 			border: none;
+			border-radius: 1000px;
+			box-shadow: 12px 12px 24px rgba(189, 75, 47, 0.64);
+			transition: all 0.3s ease-in-out 0s;
 			cursor: pointer;
-			width: 100%;
-			max-width: 200px;
-			margin: 20px 0;
-			box-shadow: 3px 3px #045f08cb;
+			outline: none;
+			position: relative;
+			padding: 10px;
 		}
+
+		button::before {
+			content: '';
+			border-radius: 1000px;
+			min-width: calc(300px + 12px);
+			min-height: calc(60px + 12px);
+			border: 6px solid #ff5e00;
+			box-shadow: 0 0 60px rgba(255, 115, 0, 0.64);
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0;
+			transition: all .3s ease-in-out 0s;
+		}
+
+		.button:hover, .button:focus {
+			color: #313133;
+			transform: translateY(-6px);
+		}
+
+		@keyframes ring {
+            0% {
+            width: 30px;
+            height: 30px;
+            opacity: 1;
+            }
+            100% {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+            }
+		}
+		
 	
 		video {
 			position: fixed;
@@ -140,9 +213,14 @@
 </head>
 <body>
 	<header>
-		<h1>First Class&copy;</h1>
+		<div>
+			<h1>First Class&copy;</h1>
+		</div>
 	</header>
 	<main>
+		<a href="#down">
+			<button class="scroll-to-top">Scroll to bottom</button>
+		</a>
 		<div>
 			<p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
 			<h1>Welcome to First Class</h1>
@@ -227,27 +305,34 @@
 			</p>
 			<p><br/><br/></p>
 		</div>
-		<div>
+		<div class="wrap">
 			<a href="http://t.me/firstclxss" target="_blank">
-				<button>Subscribe on Telegram</button>
+				<button class="button">Subscribe on Telegram</button>
 			</a>
 		</div>
 		<div>
+			<p></br></br></p>
+		</div>
+		<div class="wrap">
 			<a href="mailto:support@firstclass.cash">
-				<button>Email our support</button>
+				<button class="button">Email our support</button>
 			</a>
 		</div>
 		<div>
+			<p></br></br></p>
+		</div>
+		<div class="wrap">
 			<a href="mailto:dennis@firstclass.cash">
-				<button>Email leadership</button>
+				<button class="button">Email leadership</button>
 			</a>
 		</div>
-		</div>
 		<div>
+			<p></br></br></p>
+		</div>
+		<div id="down">
 			<p><br/><br/></p>
 			<p2>First Class&copy;</p2>
 		</div>
-		
 	</main>
 	<video autoplay muted loop>
 		<source src="video.mp4" type="video/mp4">
