@@ -1,343 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-	<title>First Class</title>
-	<style>
-		html {
-			scroll-behavior: smooth;
-		}
-		body {
-			margin: 0;
-			padding: 0;
-			background: #000;
-			color: #fff;
-			font-family: 'Montserrat', sans-serif;
-			font-size: 16px;
-			line-height: 1.6;
-			text-align: center;
-			overflow-y: scroll;
-		}
-		body::-webkit-scrollbar {
-  			display: none;
-		}
-		.wrap {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-		header {
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 60px;
-			display: flex;
-			align-items: center;
-			background-color: rgb(0, 0, 0);
-			z-index: 1;
-			padding: 0 20px;
-			animation: fade-in 2s;
-		}
-	
-		@keyframes fade-in {
-			from { opacity: 0; }
-			to { opacity: 1; }
-		}
-		
-	
-		header h1 {
-			margin: 0;
-			font-size: 24px;
-			font-weight: bold;
-			color: #fff;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			flex: 1;
-			text-align: left;
-		}
-	
-		main {
-			margin-top: 80px;
-			padding: 60px 0;
-			display: grid;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: calc(100vh - 80px);
+  <title>OmegaKeyz</title>
+  <link href="https://fonts.cdnfonts.com/css/common-pixel" rel="stylesheet">
+  <style>
+    body {
+      background-color: #000000;
+    }
 
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
 
-		}
-		
-		.scroll-to-top {
-			position: fixed;
-			bottom: 20px; /* Adjust this value to set the distance from the bottom of the page */
-			right: 20px; /* Adjust this value to set the distance from the right side of the page */
-			min-width: 150px;
-			min-height: 30px;
-			font-family: 'Nunito', sans-serif;
-			font-size: 11px;
-			text-transform: uppercase;
-			letter-spacing: 1.3px;
-			font-weight: 700;
-			color: #313133;
-			background: #d17f4f;
-			background: linear-gradient(90deg, rgb(230, 174, 129) 0%, rgb(197, 89, 56) 100%);
-			border: none;
-			border-radius: 1000px;
-			box-shadow: 12px 12px 24px rgba(189, 75, 47, 0.64);
-			transition: all 0.3s ease-in-out 0s;
-			cursor: pointer;
-			outline: none;
-			padding: 10px;
-		}
+    h1 {
+      font-size: 40px;
+      color: #FF5E00;
+      font-family: 'Common Pixel', sans-serif;
+      text-shadow: 0 0 5px #FF5E00;
+    }
 
-		main h1 {
-			font-size: 32px;
-			font-weight: bold;
-			margin: 0;
-			padding: 0;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-			line-height: 1.2;
-		}
-	
-		main p {
-			font-size: 18px;
-			font-weight: 300;
-			margin: 20px 0;
-			max-width: 100%;
-			line-height: 1.5;
-			text-align: justify;
-			padding: 0 50px;
-		}
+    .image-container {
+      display: inline-block;
+      margin: 20px;
+    }
 
-		main p1 {
-			font-size: 24px;
-			font-weight: 300;
-			margin: 20px 0;
-			max-width: 800px;
-			line-height: 1.5;
-			text-align: center;
-			font-style: italic;
-		}
-		main p2 {
-			font-size: 12px;
-			font-weight: 300;
-			margin: 20px 0;
-			max-width: 800px;
-			line-height: 1.5;
-			text-align: center;
-			font-style: italic;
-		}
+    img {
+      width: 200px;
+      height: 200px;
+    }
 
-		.button {
-			min-width: 300px;
-			min-height: 60px;
-			font-family: 'Nunito', sans-serif;
-			font-size: 22px;
-			text-transform: uppercase;
-			letter-spacing: 1.3px;
-			font-weight: 700;
-			color: #313133;
-			background: #d17f4f;
-			background: linear-gradient(90deg, rgb(230, 174, 129) 0%, rgb(197, 89, 56) 100%);
-			border: none;
-			border-radius: 1000px;
-			box-shadow: 12px 12px 24px rgba(189, 75, 47, 0.64);
-			transition: all 0.3s ease-in-out 0s;
-			cursor: pointer;
-			outline: none;
-			position: relative;
-			padding: 10px;
-		}
+    .button {
+      margin-top: 10px;
+    }
 
-		button::before {
-			content: '';
-			border-radius: 1000px;
-			min-width: calc(300px + 12px);
-			min-height: calc(60px + 12px);
-			border: 6px solid #ff5e00;
-			box-shadow: 0 0 60px rgba(255, 115, 0, 0.64);
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			opacity: 0;
-			transition: all .3s ease-in-out 0s;
-		}
+    .button {
+      min-width: 300px;
+      min-height: 60px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      color: #313133;
+      background: #FF5E00;
+      border: none;
+      border-radius: 1000px;
+      box-shadow: 12px 12px 24px rgba(255, 115, 0, 0.64);
+      transition: all 0.3s ease-in-out 0s;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 10px;
+    }
 
-		.button:hover, .button:focus {
-			color: #313133;
-			transform: translateY(-6px);
-		}
+    .button::before {
+      content: '';
+      border-radius: 1000px;
+      min-width: calc(300px + 12px);
+      min-height: calc(60px + 12px);
+      border: 6px solid #FF5E00;
+      box-shadow: 0 0 60px rgba(255, 115, 0, 0.64);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .3s ease-in-out 0s;
+    }
 
-		@keyframes ring {
-            0% {
-            width: 30px;
-            height: 30px;
-            opacity: 1;
-            }
-            100% {
-            width: 300px;
-            height: 300px;
-            opacity: 0;
-            }
-		}
-		
-	
-		video {
-			position: fixed;
-			z-index: -1;
-			top: 0;
-			left: 0;
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-			filter: brightness(30%);
-		}
+    .button:hover,
+    .button:focus {
+      color: #313133;
+      transform: translateY(-6px);
+    }
 
-
-		@media screen and (max-width: 768px) {
-			main h1 {
-				font-size: 36px;
-			}
-	
-			main p {
-				font-size: 18px;
-			}
-		}
-	</style>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-	<header>
-		<div>
-			<h1>First Class&copy;</h1>
-		</div>
-	</header>
-	<main>
-		<a href="#down">
-			<button class="scroll-to-top">Scroll to bottom</button>
-		</a>
-		<div>
-			<p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
-			<h1>Welcome to First Class</h1>
-			<p1>Read the official white paper</p1>
-			<p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
-		</div>
-		<div>
-			<h2>Introduction</h2>
-			<p>Welcome to the white paper of "First Class", a private group that is dedicated to providing exceptional support and guidance to a limited number of members. Our community is exclusive and operates on the principle of quality over quantity. We believe that a close-knit group with a shared focus can achieve great things, and that is what First Class aims to deliver.
-			</p>
-			<p>With limited spots available, we are able to maintain a cohesive community of like-minded individuals who share similar goals and aspirations. Our aim is to provide a supportive environment where members can network, share their knowledge and experiences, and learn from one another. Our group is focused on helping members achieve their goals by providing them with valuable resources and support that they won't find elsewhere.
-			</p>
-			<p>First Class offers its members access to a range of benefits that are designed to help them grow and succeed. These include exclusive networking events, mentorship opportunities, access to industry experts and thought leaders, and much more. Our members will receive the highest level of support from our team of experienced professionals, who will work tirelessly to ensure that each member receives the assistance they need to achieve their goals.
-			</p>
-			<p>We are excited to welcome new members to our community and look forward to building a strong, collaborative network of individuals who are dedicated to their personal and professional development.
-			</p>
-			<p><br/><br/></p>
-		</div>
-		<div>
-			<h2>SE Team</h2>
-			<p>In addition to our exclusive community, First Class is proud to have a team of experts in social engineering who are dedicated to helping our members improve their skills in this area. Social engineering is the art of manipulating individuals to reveal sensitive information or take actions that could be harmful to their organization. Our team of experts has extensive experience in social engineering, and they use their knowledge and skills to help our members better understand how to recognize and defend against these types of attacks.
-			</p>
-			<p>Our social engineering team offers a range of services that are tailored to the unique needs of our members. They provide training and education on the latest social engineering techniques, as well as guidance on how to identify and respond to potential threats. Additionally, they offer personalized consultations to members who need assistance with specific social engineering issues.
-			</p>
-			<p>One of the key benefits of working with our social engineering team is that our members have access to some of the most skilled and experienced experts in the field. These individuals are passionate about their work and are committed to helping our members achieve their goals. They are always available to answer questions and provide guidance, making it easy for members to get the help they need when they need it.
-			</p>
-			<p>At First Class, we believe that social engineering is an important skill that all members should possess. By working with our social engineering team, our members can improve their knowledge and understanding of this complex field, and be better equipped to protect themselves and their organizations from social engineering attacks. We are committed to providing our members with the support and resources they need to succeed, and our social engineering team is just one of the many ways we deliver on that promise.
-			</p>
-			<p><br/><br/></p>
-		</div>
-		<div>
-			<h2>Crypto</h2>
-			<p>Besides our social engineering team, First Class also has a team of experts who specialize in the field of cryptocurrencies. Our crypto team is dedicated to helping our members stay ahead of the curve in the ever-changing world of digital assets. The team engages in a variety of crypto-related activities, including crypto trading, futures trading, NFT/Crypto marketing, and more.
-			</p>
-			<p>The crypto team of First Class has a track record of success in this field, with a long history of profitable trading and successful marketing campaigns. They are experts in analyzing market trends and identifying emerging opportunities, and they use this knowledge to help our members make informed decisions when it comes to investing in digital assets.
-			</p>
-			<p>One of the key benefits of working with our crypto team is that members have access to a wide range of services and resources. Our team offers personalized consultations to help members develop trading strategies that are tailored to their unique needs and goals. They also provide education and training on various aspects of the crypto market, such as risk management, technical analysis, and more.
-			</p>
-			<p>Furthermore, our crypto team has been involved in numerous successful marketing campaigns for various NFT and crypto projects. They have a deep understanding of the crypto market and know how to position and promote projects for maximum exposure and success.
-			</p>
-			<p>At First Class, we are committed to helping our members stay at the forefront of the rapidly-evolving world of digital assets. Our crypto team is just one of the many ways we deliver on that commitment. With their expertise and guidance, our members can confidently navigate the complex crypto landscape and make informed investment decisions.
-			</p>
-			<p><br/><br/></p>
-		</div>
-		<div>
-			<h2>Social Media</h2>
-			<p>At First Class, we understand the importance of having a strong and effective social media presence. That's why we have a dedicated social media team that is responsible for managing our various social media accounts and engaging with our followers.
-			</p>
-			<p>Our social media team is made up of experienced professionals who have a deep understanding of the social media landscape. They are experts in creating engaging content and building strong relationships with our followers. They use their knowledge and skills to ensure that our social media presence is informative, engaging, and up-to-date.
-			</p>
-			<p>One of the reasons why working with our social media team is so beneficial, is that our members have access to a range of social media services and resources. Our team offers personalized consultations to help members develop social media strategies that are tailored to their unique needs and goals. They also provide education and training on various aspects of social media, such as content creation, audience engagement, and analytics.
-			</p>
-			<p>The First Class social media team has a proven track record of success in this field. They have helped us build a large and active following on various social media platforms, including Twitter, Instagram, TikTok and YouTube. They have also developed successful social media campaigns that have helped us to grow our membership and raise awareness of our brand.
-			</p>
-			<p>At First Class we believe, that social media is a powerful tool for building relationships, raising awareness, and growing our community. Our social media team is dedicated to helping our members leverage the full potential of social media to achieve their goals. We are committed to providing our members with the support and resources they need to succeed, and our social media team is just one of the many ways we deliver on that promise.
-			</p>
-			<p><br/><br/></p>
-		</div>
-		<div>
-			<h2>Networking</h2>
-			<p>We understand the importance of networking and building strong connections within our community. That's why we offer a range of networking services and opportunities to our members, designed to help them connect with like-minded individuals and professionals.
-			</p>
-			<p>Our networking services are designed to be easy to use and accessible to all members. We offer a range of virtual events, including networking sessions and conferences. These events provide members with the opportunity to connect with other professionals, share ideas and insights, and build lasting relationships.
-			</p>
-			<p>In addition to our networking events, we also offer a range of tools and resources to help our members build their networks. Our online community platform allows members to connect with each other, share ideas and resources, and collaborate on projects. We also offer personalized consultations to help members develop networking strategies and identify opportunities to expand their networks.
-			</p>
-			<p>One of the key benefits of working with First Class is the opportunity to connect with a diverse and talented community of professionals. Our members come from a wide range of industries and backgrounds, and our networking services are designed to help them connect with each other and build meaningful relationships.
-			</p>
-			<p>Our networking services have been a great success, with many of our members reporting that they have made valuable connections and built strong relationships through our events and platforms. We are committed to providing our members with the support and resources they need to succeed, and our networking services are just one of the many ways we deliver on that promise.
-			</p>
-			<p>In summary, at First Class, we understand the importance of networking and building strong connections within our community. Our networking services and opportunities are designed to help our members connect with like-minded professionals, share ideas and insights, and build lasting relationships. We are committed to providing our members with the support and resources they need to succeed, and our networking services are just one of the many ways we deliver on that promise.
-			</p>
-			<p><br/><br/></p>
-		</div>
-		<div>
-			<h2>Epilogue</h2>
-			<p>Here at First Class we believe in the power of collaboration and community. First class is committed to providing our members with the support and resources they need to succeed, and our team of experts is dedicated to helping our members achieve their goals. Our past successes in various fields are a testament to the effectiveness of our approach.
-			</p>
-			<p>We invite you to join our community of like-minded professionals and take advantage of the many benefits that First Class has to offer. However, please note that we have limited spots available, and we carefully select our members to ensure that we maintain the high-quality standards of our community.
-			</p>
-			<p>Thank you for considering First Class. We look forward to the opportunity to work with you and help you achieve your goals.
-			</p>
-			<p><br/><br/></p>
-		</div>
-		<div class="wrap">
-			<a href="http://t.me/firstclxss" target="_blank">
-				<button class="button">Subscribe on Telegram</button>
-			</a>
-		</div>
-		<div>
-			<p></br></br></p>
-		</div>
-		<div class="wrap">
-			<a href="mailto:support@firstclass.cash">
-				<button class="button">Email our support</button>
-			</a>
-		</div>
-		<div>
-			<p></br></br></p>
-		</div>
-		<div class="wrap">
-			<a href="mailto:dennis@firstclass.cash">
-				<button class="button">Email leadership</button>
-			</a>
-		</div>
-		<div>
-			<p></br></br></p>
-		</div>
-		<div id="down">
-			<p><br/><br/></p>
-			<p2>First Class&copy;</p2>
-		</div>
-	</main>
-	<video autoplay muted loop>
-		<source src="video.mp4" type="video/mp4">
-		Your browser does not support HTML5 video.
-	</video>
+  <div class="container">
+    <h1>OmegaKeyz</h1>
+    <div class="image-container">
+      <img src="5.jpg" alt="$5.00 Xbox Giftcard">
+      <br>   
+    <div>
+        <a href="https://commerce.coinbase.com/checkout/99a54100-b73c-455a-a467-bf5e1a5ba102">
+            <button class="button">Buy with crypto $4.99</button>
+        </a>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="10.jpg" alt="$10.00 Xbox Giftcard">
+      <br>
+    <div>
+        <a href="https://commerce.coinbase.com/checkout/997d1309-7702-44d9-bedc-4c7438ea3a42">
+            <button class="button">Buy with crypto $9.99</button>
+        </a>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="100.jpg" alt="$100.00 Xbox Giftcard">
+      <br>   
+    <div>
+        <a href="https://commerce.coinbase.com/checkout/74af0849-c57e-4751-a9a2-3a1457ffaee0">
+            <button class="button">Buy with crypto $99.99</button>
+        </a>
+      </div>  
+    </div>
+  </div>
 </body>
 </html>
